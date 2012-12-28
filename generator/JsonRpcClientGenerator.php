@@ -161,7 +161,7 @@ php;
         private function getFooter() {
             $url     = $this->url;
             $urlInfo = parse_url( $url );
-            if ( !empty( $urlInfo ) ) {
+            if ( !empty( $urlInfo ) && isset($urlInfo['scheme']) ) {
                 $url = sprintf( '%s://%s%s', $urlInfo['scheme'], $urlInfo['host'], $this->smd['target'] );
             }
 
